@@ -1,14 +1,9 @@
-class Runner {
+class Runner extends livingCreature
+{
     constructor(x, y, index) {
-        this.x = x;
-        this.y = y;
-        this.index = index;
+        super(x,y,index);
         this.energy = 20;
-        // this.walkable_dir = [
-        //     [this.x - 1, this.y],
-        //     [this.x + 1, this.y]
-        // ];
-        this.attack_dir = [
+        this.directions = [
             [this.x, this.y - 1],
             [this.x, this.y + 1],
             [this.x + 1, this.y - 1],
@@ -21,12 +16,12 @@ class Runner {
     }
     chooseCell(character) {
         var found = [];
-        for (var i in this.attack_dir) {
-            var x = this.attack_dir[i][0];
-            var y = this.attack_dir[i][1];
+        for (var i in this.directions) {
+            var x = this.directions[i][0];
+            var y = this.directions[i][1];
             if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
                 if (matrix[y][x] == character) {
-                    found.push(this.attack_dir[i]);
+                    found.push(this.directions[i]);
                 }
             }
         }
@@ -38,26 +33,6 @@ class Runner {
             dir = -1;
         }
         var found = [this.x + dir, this.y];
-        // if (this.way_dir == true) {
-        //     var x = this.walkable_dir[0][0];
-        //     var y = this.walkable_dir[0][1];
-        //     if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
-        //         if (matrix[y][x] == character) {
-        //             found.push(this.walkable_dir[0]);
-                    
-        //         }
-        //     }
-        // } else {
-        //     var x = this.walkable_dir[1][0];
-        //     var y = this.walkable_dir[1][1];
-        //     if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
-        //         if (matrix[y][x] == character) {
-        //             found.push(this.walkable_dir[1]);
-                    
-        //         }
-        //     }
-        
-        // }
         return found;
         
     }

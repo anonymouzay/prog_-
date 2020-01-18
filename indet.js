@@ -130,11 +130,12 @@ function draw() {
     for (var i in RunnerArr) {
         RunnerArr[i].eat();
     }
-    // console.log("grass"+grassArr.length);
-    // console.log("grassEater"+grasseaterArr.length);
-    // console.log("predator"+predatorArr.length);
-    // console.log("xman"+XmenArr.length);
-    // console.log("runer"+RunnerArr.length);   
+    console.log("grass"+grassArr.length);
+    console.log("grassEater"+grasseaterArr.length);
+    console.log("predator"+predatorArr.length);
+    console.log("xman"+XmenArr.length);
+    console.log("runer"+RunnerArr.length);   
+    console.log(predatorArr);
 }
 
 

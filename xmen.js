@@ -1,11 +1,10 @@
-class Xmen {
+class Xmen extends livingCreature {
     constructor(x, y, index) {
-        this.x = x;
-        this.y = y;
+        super(x,y,index);
         this.energy = 16;
-        this.multiply = 0;
-        this.index = index;
         this.kill_amount = 0;
+    }
+    getNewCordinates(){
         this.directions = [
             [this.x - 1, this.y - 1],
             [this.x - 2, this.y - 2],
@@ -23,17 +22,8 @@ class Xmen {
     }
     //chooses the celll where to move
     chooseCell(character) {
-        var found = [];
-        for (var i in this.directions) {
-            var x = this.directions[i][0];
-            var y = this.directions[i][1];
-            if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
-                if (matrix[y][x] == character) {
-                    found.push(this.directions[i]);
-                }
-            }
-        }
-        return found;
+        this.getNewCordinates();
+        return super.chooseCell(character);
     }
     mul() {
         this.multiply++;
