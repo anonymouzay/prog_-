@@ -28,7 +28,7 @@ class Xmen extends livingCreature {
     mul() {
         this.multiply++;
         var newCell = random(this.chooseCell(0));
-        if (newCell && this.multiply >= 12) {
+        if (newCell && this.multiply >= 24) {
             var newX = newCell[0];
             var newY = newCell[1];
             matrix[newY][newX] = 4;
@@ -57,10 +57,6 @@ class Xmen extends livingCreature {
                         var ge = new Grasseater(x, y, 1);
                         grasseaterArr.push(ge);
                     }
-                    // else if (matrix[y][x] == 3) {
-                    //     var pr = new Predator(x, y, 1);
-                    //     predatorArr.push(pr);
-                    // }
                     else if (matrix[y][x] == 4) {
                         var pr = new Xmen(x, y, 1);
                         XmenArr.push(pr);

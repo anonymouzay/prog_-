@@ -125,6 +125,9 @@ function draw() {
         predatorArr[i].eat();
     }
     for (var i in XmenArr) {
+        XmenArr = XmenArr.filter(function () {
+            return true;
+          });
         XmenArr[i].eat();
     }
     for (var i in RunnerArr) {
@@ -135,7 +138,7 @@ function draw() {
     console.log("predator"+predatorArr.length);
     console.log("xman"+XmenArr.length);
     console.log("runer"+RunnerArr.length);   
-    console.log(predatorArr);
+    console.log(XmenArr);
 }
 
 
@@ -160,10 +163,12 @@ function matrixGenerator(l) {
             } else if (rand > 60 && rand <= 75) {
                 // Nor kerpar 1
                 m[i][j] = 4;
-            } else if (rand > 75 && rand <= 77) {
+            }
+             else if (rand > 75 && rand <= 77) {
                 // Nor kerpar 2
                 m[i][j] = 6;
-            } else {
+            }
+             else {
                 // Datarkutyun
                 m[i][j] = 0;
             }
