@@ -1,0 +1,16 @@
+{
+  "name": "lesson_4",
+  "version": "1.0.0",
+  "description": "sad",
+  "main": "script.js",
+  "scripts": {
+    "test": "sa",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}
